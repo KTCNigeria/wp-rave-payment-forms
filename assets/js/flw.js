@@ -25,6 +25,10 @@ var buildConfigObj = function( form ) {
   var email = formData.email || jQuery(form).find('#flw-customer-email').val();
   var formCurrency = formData.currency || jQuery(form).find('#flw-currency').val();
   var txref   = 'WP_' + form.id.toUpperCase() + '_' + new Date().valueOf();
+  //WHERE was added
+  var phonenumber = formData.phone || jQuery(form).find('#flw-customer-phone').val();
+  var firstname = formData.firstname || jQuery(form).find('#flw-customer-firstname').val();
+  var lastname = formData.lastname || jQuery(form).find('#flw-customer-lastname').val();
 
   if (formCurrency == '') {
     formCurrency = flw_rave_options.currency;
@@ -38,6 +42,9 @@ var buildConfigObj = function( form ) {
     custom_logo: flw_rave_options.logo,
     custom_title: flw_rave_options.title,
     customer_email: email,
+	customer_phone: phonenumber,
+	customer_firstname: firstname,
+	customer_lastname: lastname,
     payment_method: flw_rave_options.method,
     PBFPubKey: flw_rave_options.pbkey,
     txref: txref,

@@ -14,10 +14,20 @@
 <div>
   <form id="<?php echo $form_id ?>" class="flw-simple-pay-now-form" <?php echo $data_attr; ?> >
     <div id="notice"></div>
-    <?php if ( empty( $atts['email'] ) ) : ?>
+
+      <label class="pay-now"><?php _e( 'First name', 'rave-pay' ) ?></label>
+      <input class="flw-form-input-text" id="flw-customer-firstname" type="text" placeholder="<?php _e( 'First name', 'rave-pay' ) ?>" required value="<?php echo $atts['firstname']; ?>"/><br>
+
+      <label class="pay-now"><?php _e( 'last name', 'rave-pay' ) ?></label>
+      <input class="flw-form-input-text" id="flw-customer-lastname" type="text" placeholder="<?php _e( 'Last name', 'rave-pay' ) ?>" required value="<?php echo $atts['lastname']; ?>"/><br>
+
+      <label class="pay-now"><?php _e( 'Phone number', 'rave-pay' ) ?></label>
+      <input class="flw-form-input-text" id="flw-customer-phone" type="tel" placeholder="<?php _e( 'Phone number', 'rave-pay' ) ?>" required /><br>
+
+ <?php if ( empty( $atts['email'] ) ) : ?>
 
       <label class="pay-now"><?php _e( 'Email', 'rave-pay' ) ?></label>
-      <input class="flw-form-input-text" id="flw-customer-email" type="email" placeholder="<?php _e( 'Email', 'rave-pay' ) ?>" required /><br>
+      <input class="flw-form-input-text" id="flw-customer-email" type="email" placeholder="<?php _e( 'Email', 'rave-pay' ) ?>" required value="<?php echo $atts['email']; ?>"/><br>
 
     <?php endif; ?>
 
